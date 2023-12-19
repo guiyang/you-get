@@ -279,10 +279,10 @@ class Bilibili(VideoExtractor):
                         message = api_playinfo['data']['message']
                 if best_quality is None or qn <= best_quality:
                     api_url = self.bilibili_interface_api(cid, qn=qn)
-                    api_content = get_content(api_url, headers=self.bilibili_headers(referer=self.url))
-                    api_playinfo_data = json.loads(api_content)
-                    if api_playinfo_data.get('quality'):
-                        playinfos.append({'code': 0, 'message': '0', 'ttl': 1, 'data': api_playinfo_data})
+                    # api_content = get_content(api_url, headers=self.bilibili_headers(referer=self.url))
+                    # api_playinfo_data = json.loads(api_content)
+                    # if api_playinfo_data.get('quality'):
+                    #     playinfos.append({'code': 0, 'message': '0', 'ttl': 1, 'data': api_playinfo_data})
             if not playinfos:
                 log.w(message)
                 # use bilibili error video instead
